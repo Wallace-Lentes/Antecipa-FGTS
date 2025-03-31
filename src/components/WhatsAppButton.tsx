@@ -5,7 +5,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 const WhatsAppButton = () => {
   const openWhatsApp = () => {
     const message = "Olá, gostaria de mais informações sobre a antecipação de FGTS.";
-    window.open(`https://wa.me/5500000000000?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/554195281595?text=${encodeURIComponent(message)}`, '_blank');
   };
 
   return (

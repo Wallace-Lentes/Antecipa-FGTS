@@ -79,7 +79,7 @@ Email: ${formData.email}
 Telefone: ${formData.phone} 
 Mensagem: ${formData.message}`;
     
-    const whatsappUrl = `https://wa.me/5500000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/554195281595?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     // Reset form
@@ -237,7 +237,7 @@ Mensagem: ${formData.message}`;
                   className="bg-green-500 hover:bg-green-600 w-full"
                   onClick={() => {
                     const message = "Olá, gostaria de mais informações sobre a antecipação de FGTS.";
-                    window.open(`https://wa.me/5500000000000?text=${encodeURIComponent(message)}`, '_blank');
+                    window.open(`https://wa.me/554195281595?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                 >
                   Falar pelo WhatsApp

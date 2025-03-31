@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="text-fgts-600 font-bold text-xl md:text-2xl">
-            FGTS<span className="text-accent-green">Antecipa</span>
+            MGA<span className="text-accent-green">Antecipa</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,7 @@ const Navbar = () => {
             </a>
             <div className="flex items-center">
               <Phone size={18} className="mr-2 text-fgts-500" />
-              <span className="font-semibold">0800 123 4567</span>
+              <span className="font-semibold">41 99528-1595</span>
             </div>
             <Button className="bg-fgts-500 hover:bg-fgts-600">
               Solicitar Agora
@@ -84,7 +84,7 @@ const Navbar = () => {
             </a>
             <div className="flex items-center py-2">
               <Phone size={18} className="mr-2 text-fgts-500" />
-              <span className="font-semibold">0800 123 4567</span>
+              <span className="font-semibold">41 99528-1595</span>
             </div>
             <Button className="bg-fgts-500 hover:bg-fgts-600 w-full">
               Solicitar Agora
