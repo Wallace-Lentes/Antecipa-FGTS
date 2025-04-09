@@ -125,7 +125,7 @@ const Navbar = () => {
               <Phone size={18} className="mr-2 text-fgts-500" />
               <span className="font-semibold">+55 (41) 99963-1174</span>
             </div>
-            <Button className="bg-fgts-500 hover:bg-fgts-600 w-full">
+            <Button className="bg-fgts-500 hover:bg-fgts-600 w-full transform transition-transform duration-200 hover:scale-105">
               Solicitar Agora
             </Button>
           </div>
