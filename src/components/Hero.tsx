@@ -77,12 +77,12 @@ const Hero = () => {
     
     // Open WhatsApp with simulation information
     const message = `Olá, gostaria de simular o valor da antecipação do meu FGTS. Nome: ${formData.name}, CPF: ${formData.cpf}, Telefone: ${formData.phone}`;
-    const whatsappUrl = `https://wa.me/5500000000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   return (
-    <section className="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg">
+    <section id="inicio" className="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
@@ -195,9 +195,7 @@ const Hero = () => {
                   Dados protegidos conforme Lei Geral de Proteção de Dados (LGPD)
                 </p>
               </div>
-            </div>
-            
-            <div className="hidden md:block absolute -bottom-8 -left-8 w-40 h-40 bg-accent-yellow rounded-full opacity-70 blur-2xl z-0"></div>
+            </div>            
           </div>
         </div>
       </div>

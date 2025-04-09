@@ -5,7 +5,7 @@ const benefits = [
   {
     icon: <Banknote className="w-10 h-10 p-2 bg-fgts-100 text-fgts-600 rounded-xl" />,
     title: "Dinheiro Rápido",
-    description: "Receba o valor da antecipação em até 24 horas após a aprovação do seu pedido."
+    description: "Receba o valor da antecipação em até 30 minutos via PIX."
   },
   {
     icon: <Clock className="w-10 h-10 p-2 bg-fgts-100 text-fgts-600 rounded-xl" />,
@@ -15,7 +15,7 @@ const benefits = [
   {
     icon: <ShieldCheck className="w-10 h-10 p-2 bg-fgts-100 text-fgts-600 rounded-xl" />,
     title: "Segurança Total",
-    description: "Processo seguro e regulamentado pelo governo federal, sem riscos para você."
+    description: "Todas as informações de nossos clientes são tratadas com máximo de segurança e privacidade. Além disso, contamos com uma estrutura completa para atender às exigências de LGPD."
   },
   {
     icon: <BarChart3 className="w-10 h-10 p-2 bg-fgts-100 text-fgts-600 rounded-xl" />,
