@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowDown, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { formatCPF, formatPhone, isValidName, isValidCPF, isValidPhone } from "@/lib/inputMasks";
 
@@ -98,11 +98,11 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
               <Button 
-                className="cta-button text-base flex items-center justify-center gap-2" 
+                className="cta-button text-base hover:bg-white/20 flex items-center justify-center gap-2" 
                 size="lg"
                 onClick={handleSimulateClick}
               >
-                Solicitar Agora <ArrowRight size={18} />
+                Solicitar Agora <ArrowDown size={18} />
               </Button>
               <Button 
                 variant="outline" 
