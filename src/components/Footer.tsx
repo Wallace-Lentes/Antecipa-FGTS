@@ -53,11 +53,11 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Atendimento</h3>
             <p className="text-gray-400 mb-4">
               Central de Atendimento: <br />
-              <span className="text-white">0800 123 4567</span>
+              <span className="text-white">+55 (41) 99963-1174</span>
             </p>
             <p className="text-gray-400 mb-4">
               E-mail: <br />
-              <a href="mailto:contato@fgtsantecipa.com.br" className="text-white hover:underline">contato@fgtsantecipa.com.br</a>
+              <a href="mailto:mgapromotora2023@gmail.com" className="text-white hover:underline">mgapromotora2023@gmail.com</a>
             </p>
             <p className="text-gray-400">
               Horário de atendimento: <br />
@@ -68,7 +68,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 py-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-            © 2024 FGTSAntecipa. Todos os direitos reservados.
+            © 2024 MGA Soluções Financeiras. Todos os direitos reservados.
           </p>
           <button
             onClick={scrollToTop}

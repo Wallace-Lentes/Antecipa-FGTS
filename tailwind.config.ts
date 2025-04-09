@@ -54,7 +54,7 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				fgts: {
-					50: '#e6f7ff',
+					50: '#f3cce1 ',
 					100: '#b3e0ff',
 					200: '#80caff',
 					300: '#4db3ff',

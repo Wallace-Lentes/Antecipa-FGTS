@@ -10,7 +10,6 @@ import { formatCPF, formatPhone, isValidEmail, isValidName, isValidCPF, isValidP
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
-    cpf: "",
     email: "",
     phone: "",
     message: ""
@@ -18,7 +17,6 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({
     name: "",
-    cpf: "",
     email: "",
     phone: "",
     message: ""
@@ -53,8 +51,7 @@ const Contact = () => {
     const newErrors = {
       name: !formData.name ? "Nome é obrigatório" : 
             !isValidName(formData.name) ? "Digite nome e sobrenome" : "",
-      cpf: !formData.cpf ? "CPF é obrigatório" : 
-           !isValidCPF(formData.cpf) ? "CPF inválido" : "",
+      
       email: !formData.email ? "E-mail é obrigatório" : 
              !isValidEmail(formData.email) ? "E-mail inválido" : "",
       phone: !formData.phone ? "Telefone é obrigatório" : 
@@ -73,19 +70,17 @@ const Contact = () => {
     // Here you would normally send the data to your backend
     // For now, let's send it via WhatsApp
     const message = `Nova mensagem do site: 
-Nome: ${formData.name} 
-CPF: ${formData.cpf} 
-Email: ${formData.email} 
-Telefone: ${formData.phone} 
-Mensagem: ${formData.message}`;
+    Nome: ${formData.name} 
+    Email: ${formData.email} 
+    Telefone: ${formData.phone} 
+    Mensagem: ${formData.message}`;
     
-    const whatsappUrl = `https://wa.me/554195281595?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     // Reset form
     setFormData({
       name: "",
-      cpf: "",
       email: "",
       phone: "",
       message: ""
@@ -123,7 +118,7 @@ Mensagem: ${formData.message}`;
                     />
                     {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                   </div>
-                  <div className="space-y-2">
+                  {/* <div className="space-y-2">
                     <label htmlFor="cpf" className="block text-sm font-medium">
                       CPF
                     </label>
@@ -135,6 +130,19 @@ Mensagem: ${formData.message}`;
                       className={`w-full ${errors.cpf ? 'border-red-500' : ''}`}
                     />
                     {errors.cpf && <p className="mt-1 text-sm text-red-500">{errors.cpf}</p>}
+                  </div> */}
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="block text-sm font-medium">
+                      Telefone
+                    </label>
+                    <Input
+                      id="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="(00) 00000-0000"
+                      className={`w-full ${errors.phone ? 'border-red-500' : ''}`}
+                    />
+                    {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -152,19 +160,6 @@ Mensagem: ${formData.message}`;
                     />
                     {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
                   </div>
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-sm font-medium">
-                      Telefone
-                    </label>
-                    <Input
-                      id="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="(00) 00000-0000"
-                      className={`w-full ${errors.phone ? 'border-red-500' : ''}`}
-                    />
-                    {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone}</p>}
-                  </div>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="block text-sm font-medium">
@@ -179,7 +174,7 @@ Mensagem: ${formData.message}`;
                   />
                   {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
                 </div>
-                <Button type="submit" className="bg-fgts-500 hover:bg-fgts-600 w-full py-6 h-auto">
+                <Button type="submit" className="bg-fgts-500 hover:bg-fgts-600 w-full py-6 h-auto transform transition-transform duration-200 hover:scale-105">
                   Enviar mensagem
                 </Button>
               </form>
@@ -194,14 +189,14 @@ Mensagem: ${formData.message}`;
                   <Phone className="text-fgts-500 h-5 w-5 mt-1" />
                   <div>
                     <p className="font-medium">Telefone</p>
-                    <p className="text-muted-foreground">0800 123 4567</p>
+                    <p className="text-muted-foreground">+55 (41) 99963-1174</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="text-fgts-500 h-5 w-5 mt-1" />
                   <div>
                     <p className="font-medium">E-mail</p>
-                    <p className="text-muted-foreground">contato@fgtsantecipa.com.br</p>
+                    <p className="text-muted-foreground">mgapromotora2023@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -209,8 +204,8 @@ Mensagem: ${formData.message}`;
                   <div>
                     <p className="font-medium">Endereço</p>
                     <p className="text-muted-foreground">
-                      Av. Paulista, 1000 - Bela Vista<br />
-                      São Paulo - SP, 01310-100
+                      Rua do Faisão, 464 - Arruda<br />
+                      Paraná - PR, 83401400
                     </p>
                   </div>
                 </div>
@@ -234,10 +229,10 @@ Mensagem: ${formData.message}`;
                   Para um atendimento mais rápido, entre em contato pelo nosso WhatsApp.
                 </p>
                 <Button 
-                  className="bg-green-500 hover:bg-green-600 w-full"
+                  className="bg-fgts-600 hover:bg-fgts-500 w-full transform transition-transform duration-200 hover:scale-105"
                   onClick={() => {
                     const message = "Olá, gostaria de mais informações sobre a antecipação de FGTS.";
-                    window.open(`https://wa.me/554195281595?text=${encodeURIComponent(message)}`, '_blank');
+                    window.open(`https://wa.me/5541999631174?text=${encodeURIComponent(message)}`, '_blank');
                   }}
                 >
                   Falar pelo WhatsApp

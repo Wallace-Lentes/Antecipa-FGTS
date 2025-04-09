@@ -84,8 +84,8 @@ const Hero = () => {
   return (
     <section id="inicio" className="pt-24 pb-16 md:pt-32 md:pb-24 gradient-bg">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-12 items-center">
+          <div className="text-center">
             <div className="bg-white/10 text-white inline-block px-4 py-2 rounded-full text-sm font-medium mb-6">
               Processo 100% digital e seguro
             </div>
@@ -96,13 +96,13 @@ const Hero = () => {
               Tenha acesso ao seu dinheiro quando você precisar, sem burocracia e com as melhores taxas do mercado.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
               <Button 
                 className="cta-button text-base flex items-center justify-center gap-2" 
                 size="lg"
                 onClick={handleSimulateClick}
               >
-                Simular Agora <ArrowRight size={18} />
+                Solicitar Agora <ArrowRight size={18} />
               </Button>
               <Button 
                 variant="outline" 
@@ -114,16 +114,16 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="flex items-center gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-center text-center">
+              <div className="flex items-center gap-2 justify-center">
                 <CheckCircle className="text-accent-green" size={20} />
-                <span className="text-white">Aprovação em 24h</span>
+                <span className="text-white">Aprovação em 30 minutos</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="text-accent-green" size={20} />
-                <span className="text-white">Taxas a partir de 1,69%</span>
+                <span className="text-white">Taxas a partir de 1,80%</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 justify-center">
                 <CheckCircle className="text-accent-green" size={20} />
                 <span className="text-white">Sem consulta ao SPC/Serasa</span>
               </div>
@@ -134,7 +134,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="relative">
+          {/* <div className="relative">
             <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl md:ml-10 animate-float">
               <h3 className="text-fgts-700 font-bold text-xl mb-6 text-center">
                 Simulação Rápida
@@ -196,7 +196,7 @@ const Hero = () => {
                 </p>
               </div>
             </div>            
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
