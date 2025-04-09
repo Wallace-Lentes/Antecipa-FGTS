@@ -9,19 +9,19 @@ import {
 const faqs = [
   {
     question: "O que é a antecipação do saque-aniversário do FGTS?",
-    answer: "A antecipação do saque-aniversário é um empréstimo que utiliza como garantia os valores futuros do saque-aniversário do FGTS. Você recebe antecipadamente o valor referente a até 5 anos do seu saque-aniversário."
+    answer: "A antecipação do saque-aniversário é um empréstimo que utiliza como garantia os valores futuros do saque-aniversário do FGTS. Você recebe antecipadamente o valor referente a até 10 anos do seu saque-aniversário"
   },
   {
     question: "Quem pode solicitar a antecipação do saque-aniversário?",
-    answer: "Trabalhadores com carteira assinada que possuam saldo no FGTS e que já optaram pela modalidade saque-aniversário. É necessário ter aderido ao saque-aniversário há pelo menos 90 dias."
+    answer: "Trabalhadores que possuam saldo no FGTS e que já optaram pela modalidade saque-aniversário."
   },
-  {
-    question: "Como faço para aderir ao saque-aniversário?",
-    answer: "A adesão pode ser feita pelo aplicativo do FGTS, site da Caixa, ou em uma agência da Caixa Econômica Federal. Após a adesão, é necessário aguardar o prazo estabelecido para solicitar a antecipação."
-  },
+  // {
+  //   question: "Como faço para aderir ao saque-aniversário?",
+  //   answer: "A adesão pode ser feita pelo aplicativo do FGTS, site da Caixa, ou em uma agência da Caixa Econômica Federal. Após a adesão, é necessário aguardar o prazo estabelecido para solicitar a antecipação."
+  // },
   {
     question: "Qual é o valor máximo que posso antecipar?",
-    answer: "O valor máximo depende do seu saldo no FGTS e pode corresponder a até 5 anos de saque-aniversário. Nossa equipe realizará uma análise personalizada para informar o valor disponível para você."
+    answer: "O valor máximo depende do seu saldo no FGTS e pode corresponder a até 10 anos de saque-aniversário. Nossa equipe realizará uma análise personalizada para informar o valor disponível para você."
   },
   {
     question: "A antecipação do FGTS afeta meu limite de crédito?",
@@ -31,14 +31,14 @@ const faqs = [
     question: "É necessário ter nome limpo para solicitar a antecipação?",
     answer: "Não é necessário ter o nome limpo, pois a operação utiliza como garantia os recursos do FGTS. Mesmo com restrições no CPF, é possível solicitar a antecipação do saque-aniversário."
   },
-  {
-    question: "Posso sacar todo o meu FGTS se solicitar a antecipação?",
-    answer: "Ao optar pelo saque-aniversário e solicitar a antecipação, você não poderá sacar o saldo total do FGTS em caso de demissão sem justa causa, apenas a multa rescisória de 40%. Esta restrição permanece por 24 meses após a antecipação."
-  },
-  {
-    question: "Quais documentos são necessários para solicitar?",
-    answer: "São necessários RG, CPF, comprovante de residência atualizado e dados bancários. Todo o processo é digital, sem necessidade de envio de documentos físicos."
-  }
+  // {
+  //   question: "Posso sacar todo o meu FGTS se solicitar a antecipação?",
+  //   answer: "Ao optar pelo saque-aniversário e solicitar a antecipação, você não poderá sacar o saldo total do FGTS em caso de demissão sem justa causa, apenas a multa rescisória de 40%. Esta restrição permanece por 24 meses após a antecipação."
+  // },
+  // {
+  //   question: "Quais documentos são necessários para solicitar?",
+  //   answer: "São necessários RG, CPF, comprovante de residência atualizado e dados bancários. Todo o processo é digital, sem necessidade de envio de documentos físicos."
+  // }
 ];
 
 const FAQ = () => {
