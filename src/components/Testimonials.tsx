@@ -18,7 +18,7 @@ const testimonials = [
   {
     name: "Roberto Almeida",
     location: "Belo Horizonte, MG",
-    text: "Fiz a simulação online, recebi uma ligação no mesmo dia e em 24 horas o dinheiro estava na minha conta. Equipe muito atenciosa e processo transparente.",
+    text: "Fiz a simulação online, recebi uma ligação no mesmo dia e em alguns minutos o dinheiro estava na minha conta. Equipe muito atenciosa e processo transparente.",
     avatar: "RA"
   }
 ];
