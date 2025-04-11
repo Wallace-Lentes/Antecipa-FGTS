@@ -25,7 +25,7 @@ const steps = [
   {
     number: "05",
     title: "Receba o dinheiro",
-    description: "O valor será depositado na sua conta bancária em até 24 horas após a aprovação."
+    description: "O valor será depositado na sua conta bancária em 30 minutos após a aprovação."
   }
 ];
 
