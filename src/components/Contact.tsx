@@ -204,8 +204,8 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">Endereço</p>
                     <p className="text-muted-foreground">
-                      Rua do Faisão, 464 - Arruda<br />
-                      Paraná - PR, 83401400
+                    Rua Walter Rodolfo Behling, 147 - Guabirotuba<br />
+                     Curitiba - PR, 81510-570
                     </p>
                   </div>
                 </div>
