@@ -196,7 +196,7 @@ const Contact = () => {
                   <Mail className="text-fgts-500 h-5 w-5 mt-1" />
                   <div>
                     <p className="font-medium">E-mail</p>
-                    <p className="text-muted-foreground">mgapromotora2023@gmail.com</p>
+                    <p className="text-muted-foreground">atendimento@mgasolucoesfinanceiras.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
