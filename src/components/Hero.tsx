@@ -1,8 +1,13 @@
-
 import { useState } from "react";
 import { ArrowDown, ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { formatCPF, formatPhone, isValidName, isValidCPF, isValidPhone } from "@/lib/inputMasks";
+import {
+  formatCPF,
+  formatPhone,
+  isValidName,
+  isValidCPF,
+  isValidPhone,
+} from "@/lib/inputMasks";
 
 const Hero = () => {
   const [focusedField, setFocusedField] = useState<string | null>(null);
@@ -16,23 +21,23 @@ const Hero = () => {
     cpf: "",
     phone: "",
   });
-  
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     let formattedValue = value;
-    
+
     // Apply formatting based on field type
     if (id === "cpf") {
       formattedValue = formatCPF(value);
     } else if (id === "phone") {
       formattedValue = formatPhone(value);
     }
-    
+
     setFormData({
       ...formData,
       [id]: formattedValue,
     });
-    
+
     // Clear error when typing
     if (errors[id as keyof typeof errors]) {
       setErrors({
@@ -41,21 +46,30 @@ const Hero = () => {
       });
     }
   };
-  
+
   const validateForm = () => {
     const newErrors = {
-      name: !formData.name ? "Nome é obrigatório" : 
-            !isValidName(formData.name) ? "Digite nome e sobrenome" : "",
-      cpf: !formData.cpf ? "CPF é obrigatório" : 
-           !isValidCPF(formData.cpf) ? "CPF inválido" : "",
-      phone: !formData.phone ? "Telefone é obrigatório" : 
-             !isValidPhone(formData.phone) ? "Telefone inválido" : "",
+      name: !formData.name
+        ? "Nome é obrigatório"
+        : !isValidName(formData.name)
+        ? "Digite nome e sobrenome"
+        : "",
+      cpf: !formData.cpf
+        ? "CPF é obrigatório"
+        : !isValidCPF(formData.cpf)
+        ? "CPF inválido"
+        : "",
+      phone: !formData.phone
+        ? "Telefone é obrigatório"
+        : !isValidPhone(formData.phone)
+        ? "Telefone inválido"
+        : "",
     };
-    
+
     setErrors(newErrors);
-    return !Object.values(newErrors).some(error => error);
+    return !Object.values(newErrors).some((error) => error);
   };
-  
+
   const handleSimulateClick = () => {
     // Focus on the first field of the form
     setFocusedField("name");
@@ -74,11 +88,13 @@ const Hero = () => {
 
   const handleSubmitSimulation = () => {
     if (!validateForm()) return;
-    
+
     // Open WhatsApp with simulation information
     const message = `Olá, gostaria de simular o valor da antecipação do meu FGTS. Nome: ${formData.name}, CPF: ${formData.cpf}, Telefone: ${formData.phone}`;
-    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -93,27 +109,35 @@ const Hero = () => {
               Antecipação do seu FGTS de forma rápida e segura
             </h1>
             <p className="text-white/90 text-lg md:text-xl mb-8">
-              Tenha acesso ao seu dinheiro quando você precisar, sem burocracia e com as melhores taxas do mercado.
+              Tenha acesso ao seu dinheiro quando você precisar, sem burocracia
+              e com as melhores taxas do mercado.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8">
-              <Button 
-                className="cta-button text-base hover:bg-white/20 flex items-center justify-center gap-2" 
+              <Button
+                className="cta-button text-base bg-fgts-50 hover:bg-fgts-500 text-white flex items-center justify-center gap-2"
                 size="lg"
-                onClick={handleSimulateClick}
+                onClick={() => {
+                  const message =
+                    "Olá, gostaria de mais informações sobre a antecipação de FGTS.";
+                  const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(
+                    message
+                  )}`;
+                  window.open(whatsappUrl, "_blank");
+                }}
               >
-                Solicitar Agora <ArrowDown size={18} />
+                Solicitar Agora <ArrowRight size={18} />
               </Button>
-              <Button 
-                variant="outline" 
-                className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-base" 
+              <Button
+                variant="outline"
+                className="bg-white/10 text-white border-white/30 hover:bg-white/20 text-base"
                 size="lg"
                 onClick={scrollToHowItWorks}
               >
                 Saiba Mais
               </Button>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-center text-center">
               <div className="flex items-center gap-2 justify-center">
                 <CheckCircle className="text-accent-green" size={20} />
@@ -133,7 +157,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          
+
           {/* <div className="relative">
             <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl md:ml-10 animate-float">
               <h3 className="text-fgts-700 font-bold text-xl mb-6 text-center">

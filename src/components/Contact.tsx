@@ -1,43 +1,51 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { formatCPF, formatPhone, isValidEmail, isValidName, isValidCPF, isValidPhone } from "@/lib/inputMasks";
+import {
+  formatCPF,
+  formatPhone,
+  isValidEmail,
+  isValidName,
+  isValidCPF,
+  isValidPhone,
+} from "@/lib/inputMasks";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { id, value } = e.target;
     let formattedValue = value;
-    
+
     // Apply formatting based on field type
     if (id === "cpf") {
       formattedValue = formatCPF(value);
     } else if (id === "phone") {
       formattedValue = formatPhone(value);
     }
-    
+
     setFormData({
       ...formData,
       [id]: formattedValue,
     });
-    
+
     // Clear error when typing
     if (errors[id as keyof typeof errors]) {
       setErrors({
@@ -49,24 +57,33 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {
-      name: !formData.name ? "Nome é obrigatório" : 
-            !isValidName(formData.name) ? "Digite nome e sobrenome" : "",
-      
-      email: !formData.email ? "E-mail é obrigatório" : 
-             !isValidEmail(formData.email) ? "E-mail inválido" : "",
-      phone: !formData.phone ? "Telefone é obrigatório" : 
-             !isValidPhone(formData.phone) ? "Telefone inválido" : "",
-      message: !formData.message ? "Mensagem é obrigatória" : ""
+      name: !formData.name
+        ? "Nome é obrigatório"
+        : !isValidName(formData.name)
+        ? "Digite nome e sobrenome"
+        : "",
+
+      email: !formData.email
+        ? "E-mail é obrigatório"
+        : !isValidEmail(formData.email)
+        ? "E-mail inválido"
+        : "",
+      phone: !formData.phone
+        ? "Telefone é obrigatório"
+        : !isValidPhone(formData.phone)
+        ? "Telefone inválido"
+        : "",
+      message: !formData.message ? "Mensagem é obrigatória" : "",
     };
-    
+
     setErrors(newErrors);
-    return !Object.values(newErrors).some(error => error);
+    return !Object.values(newErrors).some((error) => error);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
-    
+
     // Here you would normally send the data to your backend
     // For now, let's send it via WhatsApp
     const message = `Nova mensagem do site: 
@@ -74,16 +91,18 @@ const Contact = () => {
     Email: ${formData.email} 
     Telefone: ${formData.phone} 
     Mensagem: ${formData.message}`;
-    
-    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-    
+
+    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(whatsappUrl, "_blank");
+
     // Reset form
     setFormData({
       name: "",
       email: "",
       phone: "",
-      message: ""
+      message: "",
     });
   };
 
@@ -95,12 +114,13 @@ const Contact = () => {
             Entre em contato conosco
           </h2>
           <p className="text-muted-foreground text-lg">
-            Estamos prontos para esclarecer suas dúvidas e ajudar com a antecipação do seu FGTS
+            Estamos prontos para esclarecer suas dúvidas e ajudar com a
+            antecipação do seu FGTS
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <Card>
+        <div className="max-w-6xl mx-auto">
+          {/* <Card>
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold mb-6">Envie sua mensagem</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
@@ -118,7 +138,7 @@ const Contact = () => {
                     />
                     {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
                   </div>
-                  {/* <div className="space-y-2">
+                  <div className="space-y-2">
                     <label htmlFor="cpf" className="block text-sm font-medium">
                       CPF
                     </label>
@@ -130,7 +150,7 @@ const Contact = () => {
                       className={`w-full ${errors.cpf ? 'border-red-500' : ''}`}
                     />
                     {errors.cpf && <p className="mt-1 text-sm text-red-500">{errors.cpf}</p>}
-                  </div> */}
+                  </div>
                   <div className="space-y-2">
                     <label htmlFor="phone" className="block text-sm font-medium">
                       Telefone
@@ -179,8 +199,9 @@ const Contact = () => {
                 </Button>
               </form>
             </CardContent>
-          </Card>
-
+          </Card> */}
+          <div className="flex justify-center">
+        <div className="max-w-3xl w-full px-4">
           <div className="flex flex-col justify-between">
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-6">Informações de contato</h3>
@@ -204,8 +225,8 @@ const Contact = () => {
                   <div>
                     <p className="font-medium">Endereço</p>
                     <p className="text-muted-foreground">
-                    Rua Walter Rodolfo Behling, 147 - Guabirotuba<br />
-                     Curitiba - PR, 81510-570
+                      Rua Walter Rodolfo Behling, 147 - Guabirotuba<br />
+                      Curitiba - PR, 81510-570
                     </p>
                   </div>
                 </div>
@@ -242,7 +263,9 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 };
 
