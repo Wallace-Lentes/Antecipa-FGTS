@@ -68,7 +68,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 py-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 sm:mb-0">
-            © 2024 MGA Soluções Financeiras. Todos os direitos reservados.
+            © 2024 MGA Soluções Financeiras CNPJ  58.024.635/0001-09. Todos os direitos reservados.
           </p>
           <button
             onClick={scrollToTop}
