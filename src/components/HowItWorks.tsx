@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const steps = [
@@ -30,20 +29,10 @@ const steps = [
 ];
 
 const HowItWorks = () => {
-  const scrollToSimulation = () => {
-    // Scroll to the top where the simulation form is
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-    
-    // Focus on the first input field
-    setTimeout(() => {
-      const nameInput = document.getElementById("name");
-      if (nameInput) {
-        nameInput.focus();
-      }
-    }, 800);
+  const handleWhatsAppRedirect = () => {
+    const message = "Olá, gostaria de iniciar o processo de antecipação do FGTS.";
+    const whatsappUrl = `https://wa.me/5541999631174?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -79,8 +68,8 @@ const HowItWorks = () => {
 
         <div className="text-center">
           <Button 
-            className="bg-fgts-500 hover:bg-fgts-600 text-lg px-8 py-6 h-auto"
-            onClick={scrollToSimulation}
+            className="bg-fgts-500 hover:bg-fgts-600 text-lg px-8 py-6 h-auto text-white"
+            onClick={handleWhatsAppRedirect}
           >
             Iniciar Processo Agora
           </Button>
